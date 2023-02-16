@@ -59,8 +59,6 @@ error_reporting(0);
 function display_name ($name) {
     echo "Hello " .$name;
 }
-
-
 ?>
 
 </body>
