@@ -39,8 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <form action="" method="post">
-    <p>Họ tên: <input type="text" name="fullname" value=""> <?php echo $error_fullname; "<br>" ?></p>
-    <p>Email: <input type="email" name="email" value=""> <?php echo $error_email; "<br>" ?></p>
-    <p>URL: <input type="text" name="path" value=""> <?php echo $error_path; "<br>" ?></p>
+    <p>Họ tên: <input type="text" name="fullname" value=""> <?php echo $error_fullname; ?></p>
+    <p>Email: <input type="email" name="email" value=""> <?php echo $error_email; ?></p>
+    <p>URL: <input type="text" name="path" value=""> <?php echo $error_path; ?></p>
     <button type="submit">Gửi</button>
 </form>
