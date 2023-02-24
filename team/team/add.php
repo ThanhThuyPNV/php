@@ -44,7 +44,7 @@ require_once 'functions.php';
 }
 </style>
 <body>
-   <a href="list.php" class="btn"> Danh sách sinh viên</a> 
+   <a href="list.php" class="btn"> Thêm sinh viên</a> 
    <hr/>
 
    <?php
