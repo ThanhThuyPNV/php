@@ -25,6 +25,9 @@ require_once 'functions.php';
 }
 .form-item{
     width:50%;
+    position: relative;
+    left: 50px;s
+
     /* padding: 5px 10px; */
 }
 .form-group{
@@ -48,25 +51,6 @@ require_once 'functions.php';
    <hr/>
 
    <?php
-   if(!empty($_POST['student_id'])){
-        $student_id = $_POST['student_id'];
-        if (in_array($student_id, $_SESSION['student'])){
-            $student_infor = $_SESSION['student'][$student_id];
-            echo '<pre>';
-            print_r($student_infor);
-            echo '</pre>';
-           
-        }else{
-            redirect('list.php');
-        }
-    
-   }else{
-        redirect('list.php');
-        
-   }
-?>
-<?php
-
    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Validate 
         $errors = array();
@@ -123,7 +107,7 @@ require_once 'functions.php';
            
 
             $item_student=[
-                // 'maSV'=>$student_id,
+                'maSV'=>$student_id,
                 'name'=>$student_name,
                 'gender'=>$student_gender,
                 'hometown'=>$student_hometown,
@@ -132,8 +116,8 @@ require_once 'functions.php';
             ];
             if (!empty($_SESSION['student'])){
                 $check= false;
-                foreach ($_SESSION['student'] as  $item) {
-                    if($student_id ==$item['maSV'] && $item['student_id']!=$student_id){
+                foreach ($_SESSION['student'] as $key => $item) {
+                    if($student_id ==$key){
                         $check=true;
                         break;
                     }    
@@ -156,52 +140,50 @@ require_once 'functions.php';
             }
         }
    ?>
-
    <form action="" method="post">
     <div class="form-group">
         <label for="">Mã sinh viên</label>
-        <input type="text" class="form-item" name="student_id" placeholder="Nhập mã sinh viên " value="<?php echo $student_infor['maSV'];?>">
+        <input type="text" class="form-item" name="student_id" placeholder="Nhập mã sinh viên ">
         <?php if (!empty($errors) && in_array('ma_err',$errors)): ?>
         <span class="error">Mã sinh viên không được để trống.</span>
         <?php endif;?>
     </div>
     <div class="form-group">
         <label for="">Họ và tên</label>
-        <input type="text" class="form-item" name="student_name" placeholder="Nhập họ và tên sinh viên" value="<?php echo $student_infor['name'];?>">
+        <input type="text" class="form-item" name="student_name" placeholder="Nhập họ và tên sinh viên">
         <?php if (!empty($errors) && in_array('name_err',$errors)): ?>
         <span class="error">Tên sinh viên không được để trống.</span>
         <?php endif;?>
     </div>
     <div class="form-group">
         <label for="">Giới tính</label>
-        <input type="radio" class="form-item" name="student_gender" value="<?php echo $student_infor['gender'];?>">Nam
-        <input type="radio" class="form-item" name="student_gender" value="<?php echo $student_infor['gender'];?>" >Nu
+        <input type="radio" class="form-item" name="student_gender" value="Nam">Nam
+        <input type="radio" class="form-item" name="student_gender" value="Nữ" >Nu
         <?php if (!empty($errors) && in_array('gender_err',$errors)): ?>
         <span class="error">Giới sinh viên không được để trống.</span>
         <?php endif;?>
     </div>
     <div class="form-group">
         <label for="">Quê quán</label>
-        <input type="text" class="form-item" name="student_hometown" placeholder="Nhập quê quán" value="<?php echo $student_infor['hometown'];?>">
+        <input type="text" class="form-item" name="student_hometown" placeholder="Nhập quê quán">
         <?php if (!empty($errors) && in_array('hometown_err',$errors)): ?>
         <span class="error">Quê quán sinh viên không được để trống.</span>
         <?php endif;?>
     </div>
     <div class="form-group">
         <label for="">Ngày sinh</label>
-        <input type="date" class="form-item" name="student_birthday" value="<?php echo $student_infor['birthday'];?>">
+        <input type="date" class="form-item" name="student_birthday">
         <?php if (!empty($errors) && in_array('birthday_err',$errors)): ?>
         <span class="error">Ngày sinh viên không được để trống.</span>
         <?php endif;?>
     </div>
     <div class="form-group">
         <label for="">Ngành học</label>
-        <input type="text" class="form-item" name="student_major" placeholder="Nhập ngành học" value="<?php echo $student_infor['major'];?>">
-        <?php if (!empty($errors) && in_array('major_err',$errors)): ?>
-        <span class="error">Ngày học sinh viên không được để trống.</span>
+        <input type="text" class="form-item" name="student_major" placeholder="Nhập ngành học">
+        <?php if (!empty($errors) && in_array('birthday_err',$errors)): ?>
+        <span class="error">Ngày sinh viên không được để trống.</span>
         <?php endif;?>
     </div>
-    <button type="submit">Save</button>
-   </form>
-</body>
+
+    <input type="submit" value="Add">
 </html>

@@ -65,7 +65,7 @@ if (!empty($mess)){
             
             ?>
             <tr>
-                <td><?php echo $value['maSV']; ?></td>
+                <td><?php echo $key ?></td>
                 <td><?php echo $value['name']; ?></td>
                 <td><?php echo $value['gender']; ?></td>
                 <td><?php echo $value['hometown']; ?></td>
