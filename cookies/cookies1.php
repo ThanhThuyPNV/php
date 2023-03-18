@@ -68,8 +68,7 @@
                 <button type="submit" >Xác nhận</button>
             </td>
             </tr>
-        </table>
-        
+        </table>  
     </form>
     <font color="#668B8B">
         <?php 

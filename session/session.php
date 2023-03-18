@@ -14,7 +14,10 @@
     session_start();
     session_register("name"); 
     $_SESSION["name"] = "thuy";
+
     echo "<a href='session1.php'></a>";
+
+    if(isset($_SESSION))
     ?>
 </body>
 </html>

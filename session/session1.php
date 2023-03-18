@@ -1,6 +1,6 @@
+
 <?php 
 session_start();
-session_register
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +11,8 @@ session_register
     <title>Document</title>
 </head>
 <body>
-    
+    <?php 
+    echo "Ten cua ban la <br>".$_SESSION["name"]."</br>"; 
+    ?>
 </body>
 </html>

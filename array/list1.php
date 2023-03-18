@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +24,7 @@
             </tr>
         </thead>
         <tr>
-            <td><?php echo $value['id'] ?></td>
+            <td><?php echo $key?></td>
             <td><?php echo $value['Name'] ?></td>
             <td><?php echo $value['Quanlity'] ?></td>
             <td><?php echo $value['Price'] ?></td>

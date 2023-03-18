@@ -116,7 +116,6 @@
             echo "Email:".$_SESSION['email'] .'<br>';
             echo "Tên đăng nhập:" .$_SESSION['username'] .'<br>';
             echo "Mật khẩu:" .$_SESSION['password'] .'<br>';
-            echo "<a href='sessionbt2.php' >Click here! </a>";
             echo "</td></tr></table>";
         }
     ?>

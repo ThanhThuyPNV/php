@@ -121,7 +121,8 @@
     ?>
         </div>
     </div>
-        <?php
-        }?>
+    <?php
+    }
+    ?>
 </body>
 </html>

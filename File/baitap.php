@@ -8,9 +8,9 @@
 </head>
 <body>
     <?php 
-    setcookie("user_name", "thuy", time()+10 ,'/');
-    echo 'đợi 10s'."<br>";
-    echo $_COOKIE['user_name'];
+    $json = '{"a":1, "b":2, "c":3, "d":4, "e":5}';
+    var_dump(json_decode($json, false));
+    var_dump(json_encode($json, true));
     ?>
 </body>
 </html>

@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        
+    </div>
     <?php 
     echo "<p class = 'kq'>Xin chào</p>".$_COOKIE['khack_hang']."<br>";
     echo '<img src="https://haycafe.vn/wp-content/uploads/2021/12/Anh-Noel-cuc-net.jpeg"/>';

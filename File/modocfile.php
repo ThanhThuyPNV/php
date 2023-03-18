@@ -11,7 +11,7 @@
         <tr>
             <td bgcolor="#CC0066">
                 <?php
-                $file = fopen("\tap_tin\nhan.txt","r",l);
+                $file = fopen("..\tap_tin\nhan.txt","r",l);
                 if(!$file)
                 {
                     echo "<br> Khong the mo file nay.<br>";
@@ -22,8 +22,8 @@
                     echo "<b></b><br>";
                     while(!feof($file))
                     {
-                        $noi_dung = fgets($file);
-                        echo n12br($noi_dung);
+                        $noi_dung = fgets($file); // Đọc file
+                        echo nl2br($noi_dung); // display có nhiều dòng
                     }
                     echo "<br><b>Mo va doc file thanh cong!</br>";
                     echo "</font></p>";
