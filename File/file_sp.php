@@ -76,7 +76,7 @@
         echo "<td>$mang[2]</td>";
         echo "<td>$mang[3]</td>";
         echo "</tr>";
-    }
+    
 
     echo "</table>";
     echo "<p align = 'center' class='styel6'><b> Đọc file thành công !</b></p>";
